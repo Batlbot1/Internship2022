@@ -6,7 +6,12 @@
  */
 
 function findOne() {
-    return [];
+    return {
+        id: "123456",
+        userName: "Vlad",
+        age: "24",
+        ip: "343645654534",
+    };
 }
 
 function create() {
@@ -15,7 +20,22 @@ function create() {
     };
 }
 
+function deleteUser() {
+    return {
+        message: 'Delete',
+    };
+}
+
+function updateUser() {
+    return {
+        message: 'Updated',
+    };
+}
+
+
 module.exports = {
     create,
     findOne,
+    deleteUser,
+    updateUser,
 };

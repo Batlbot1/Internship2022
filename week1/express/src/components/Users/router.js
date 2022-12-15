@@ -1,14 +1,15 @@
 const { Router } = require('express');
 const UserComponent = require('./index');
+const handler = require('../../config/handler');
 
 const router = Router();
 
-router.get('/:id', UserComponent.findOne);
+router.get('/:id', handler.handler(UserComponent.findOne));
 
-router.post('/', UserComponent.create);
+router.post('/', handler.handler(UserComponent.create));
 
-router.delete('/:id', UserComponent.deleteUser);
+router.delete('/:id', handler.handler(UserComponent.deleteUser));
 
-router.put('/:id', UserComponent.update);
+router.put('/:id', handler.handler(UserComponent.update));
 
 module.exports = router;
